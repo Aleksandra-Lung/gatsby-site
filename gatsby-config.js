@@ -12,21 +12,36 @@ module.exports = {
     "gatsby-plugin-mdx",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
+    `gatsby-plugin-postcss`,
+    `gatsby-plugin-sass`,
+    `gatsby-transformer-json`,
+    "gatsby-plugin-sass",
+    
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "images",
-        path: "./src/images/",
+        path: "./static/images/",
       },
       __key: "images",
     },
+
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: `gatsby-source-filesystem`,
       options: {
-        name: "pages",
-        path: "./src/pages/",
+        name: `data`,
+        path: `${ __dirname }/data/`,
+        ignore: [`**/\.*`], // ignore files starting with a dot
       },
-      __key: "pages",
     },
+
+    // {
+    //   resolve: "gatsby-source-filesystem",
+    //   options: {
+    //     name: "pages",
+    //     path: "./src/pages/",
+    //   },
+    //   __key: "pages",
+    // },
   ],
 };
